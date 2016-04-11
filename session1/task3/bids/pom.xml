@@ -2,29 +2,20 @@
 <project xmlns='http://maven.apache.org/POM/4.0.0' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
          xsi:schemaLocation='http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd'>
     <modelVersion>4.0.0</modelVersion>
-
     <parent>
         <groupId>com.dstepanova.hadoop101</groupId>
-        <artifactId>session1</artifactId>
+        <artifactId>task3</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-
-    <artifactId>task2</artifactId>
+    <artifactId>bids</artifactId>
+    <name>bids</name>
     <packaging>jar</packaging>
-    <name>task2</name>
 
     <dependencies>
-
-        <!-- JSR-305 -->
         <dependency>
-            <groupId>com.google.code.findbugs</groupId>
-            <artifactId>jsr305</artifactId>
-        </dependency>
-
-        <!-- Google Guava -->
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
+            <groupId>com.dstepanova.hadoop101</groupId>
+            <artifactId>shared</artifactId>
+            <version>${project.version}</version>
         </dependency>
 
         <!-- Logback -->
@@ -52,43 +43,59 @@
             <groupId>org.slf4j</groupId>
             <artifactId>jul-to-slf4j</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.apache.tika</groupId>
-            <artifactId>tika-parsers</artifactId>
-            <version>1.11</version>
-        </dependency>
-
 
         <!-- Hadoop -->
         <dependency>
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-client</artifactId>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-mapreduce-client-jobclient</artifactId>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-common</artifactId>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-yarn-api</artifactId>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-yarn-common</artifactId>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-yarn-client</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>eu.bitwalker</groupId>
+            <artifactId>UserAgentUtils</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.mrunit</groupId>
+            <artifactId>mrunit</artifactId>
+            <classifier>hadoop2</classifier>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
-
     <build>
-        <finalName>task2</finalName>
+        <finalName>bids</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -96,7 +103,7 @@
                 <configuration>
                     <transformers>
                         <transformer implementation='org.apache.maven.plugins.shade.resource.ManifestResourceTransformer'>
-                            <mainClass>com.dstepanova.session1.task2.client.ClientLauncher</mainClass>
+                            <mainClass>com.dstepanova.session1.task3.bids.Bids</mainClass>
                         </transformer>
                     </transformers>
                 </configuration>

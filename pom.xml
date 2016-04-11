@@ -14,7 +14,7 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <logback.version>1.1.1</logback.version>
         <slf4j.version>1.7.6</slf4j.version>
-        <hadoop.version>2.7.2</hadoop.version>
+        <hadoop.version>2.4.0</hadoop.version>
         <junit.version>4.12</junit.version>
         <selenium.version>2.25.0</selenium.version>
     </properties>
@@ -34,6 +34,13 @@
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
                 <version>18.0</version>
+            </dependency>
+
+            <!-- Hazelcast -->
+            <dependency>
+                <groupId>com.hazelcast</groupId>
+                <artifactId>hazelcast-all</artifactId>
+                <version>3.6.2</version>
             </dependency>
 
 
@@ -113,18 +120,30 @@
                 <version>${selenium.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>eu.bitwalker</groupId>
+                <artifactId>UserAgentUtils</artifactId>
+                <version>1.19</version>
+            </dependency>
 
             <dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
                 <version>${junit.version}</version>
-                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.mrunit</groupId>
+                <artifactId>mrunit</artifactId>
+                <classifier>hadoop2</classifier>
+                <version>1.1.0</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
 
     <modules>
         <module>session1</module>
+        <!--<module>BigData2016/hadoop3hw</module>-->
+        <!--<module>epam/hadoop3hw</module>-->
     </modules>
 
 

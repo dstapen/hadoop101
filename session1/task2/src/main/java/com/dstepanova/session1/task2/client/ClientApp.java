@@ -161,7 +161,7 @@ final class ClientApp implements Runnable, AutoCloseable {
 
                 Map<String, LocalResource> localResources = new HashMap<>();
 
-                LOG.info("Deploy artefact into hfds ...");
+                LOG.info("Deploy artifact into hfds ...");
                 FileSystem aFileSystem = FileSystem.get(aConfiguration);
                 InfoMetrics jarFileInfo = new DeployCommand(aFileSystem,
                         aClientContext.getDeploy(),
