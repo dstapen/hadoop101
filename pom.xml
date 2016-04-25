@@ -127,6 +127,12 @@
             </dependency>
 
             <dependency>
+                <groupId>org.apache.hive</groupId>
+                <artifactId>hive-exec</artifactId>
+                <version>2.0.0</version>
+            </dependency>
+
+            <dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
                 <version>${junit.version}</version>
@@ -142,8 +148,7 @@
 
     <modules>
         <module>session1</module>
-        <!--<module>BigData2016/hadoop3hw</module>-->
-        <!--<module>epam/hadoop3hw</module>-->
+        <module>session2</module>
     </modules>
 
 
